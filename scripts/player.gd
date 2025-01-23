@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var animated_sprite = $AnimatedSprite2D 
+
 @export var move_speed:float 
 @export var jump_speed:float
 var gravity=ProjectSettings.get_setting("physics/2d/default_gravity")
