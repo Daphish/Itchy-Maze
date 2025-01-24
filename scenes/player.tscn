@@ -10,15 +10,20 @@ radius = 205.76
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gd5c"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2eu2c")
+}, {
 "duration": 1.0,
 "texture": ExtResource("1_efopg")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_k6m8l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_2eu2c")
 }, {
 "duration": 1.0,
 "texture": ExtResource("1_efopg")
@@ -38,6 +43,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(50, -25)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_t0rxy")
 move_speed = 140.0
@@ -45,13 +51,16 @@ jump_speed = 400.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_efopg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_yiwwa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.25, 1.25)
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_5gd5c")
 autoplay = "default"
-frame_progress = 0.510431
+
+[node name="Camera2D" type="Camera2D" parent="."]
