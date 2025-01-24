@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj4dm8xkt41x8"]
+[gd_scene load_steps=12 format=3 uid="uid://bj4dm8xkt41x8"]
 
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_82ra1"]
 [ext_resource type="Texture2D" uid="uid://bwj6fda12a1ho" path="res://assets/backgrounds/back-menu.jpeg" id="1_v8r43"]
 [ext_resource type="FontFile" uid="uid://sluwjbr2itt3" path="res://assets/fonts/Cinema Groovy.otf" id="2_bieqr"]
 [ext_resource type="Texture2D" uid="uid://be5trgi23flbt" path="res://assets/backgrounds/hover.png" id="2_sj0jv"]
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_82ra1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -98,3 +100,5 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_kf2ko")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qwt5u")
 theme_override_styles/normal = SubResource("StyleBoxTexture_aejrt")
 text = "HELP"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
