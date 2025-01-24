@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://daar1frjm7b6l"]
+
+[ext_resource type="Texture2D" uid="uid://m4xy2il7i8xi" path="res://assets/backgrounds/gameover.jpeg" id="1_61ddx"]
+[ext_resource type="Script" path="res://scripts/gameover.gd" id="1_r8umt"]
+[ext_resource type="FontFile" uid="uid://sluwjbr2itt3" path="res://assets/fonts/Cinema Groovy.otf" id="2_7btmh"]
+[ext_resource type="Texture2D" uid="uid://be5trgi23flbt" path="res://assets/backgrounds/hover.png" id="2_ea6l6"]
+[ext_resource type="Texture2D" uid="uid://bbt0y5ad1l7qq" path="res://assets/backgrounds/normal.png" id="3_4hwv3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulk8i"]
+texture = ExtResource("2_ea6l6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqihu"]
+texture = ExtResource("2_ea6l6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvljg"]
+texture = ExtResource("3_4hwv3")
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8umt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_61ddx")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 36.0
+offset_right = 73.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volver" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_pressed_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7btmh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ulk8i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iqihu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xvljg")
+text = "Volver"
+
+[connection signal="pressed" from="VBoxContainer/Volver" to="." method="_on_volver_pressed"]

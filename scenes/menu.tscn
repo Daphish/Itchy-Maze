@@ -84,7 +84,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_4i8dq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_aejrt")
 text = "PLAY"
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Help" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
