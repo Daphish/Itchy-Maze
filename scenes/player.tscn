@@ -64,3 +64,10 @@ sprite_frames = SubResource("SpriteFrames_5gd5c")
 autoplay = "default"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.6
+drag_top_margin = 0.1
+drag_right_margin = 0.25
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
