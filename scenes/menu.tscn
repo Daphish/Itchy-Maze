@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://bj4dm8xkt41x8"]
+
+[ext_resource type="Texture2D" uid="uid://bwj6fda12a1ho" path="res://assets/backgrounds/back-menu.jpeg" id="1_v8r43"]
+[ext_resource type="FontFile" uid="uid://sluwjbr2itt3" path="res://assets/fonts/Cinema Groovy.otf" id="2_bieqr"]
+[ext_resource type="Texture2D" uid="uid://be5trgi23flbt" path="res://assets/backgrounds/hover.png" id="2_sj0jv"]
+[ext_resource type="Texture2D" uid="uid://bbt0y5ad1l7qq" path="res://assets/backgrounds/normal.png" id="3_ot12q"]
+
+[sub_resource type="Theme" id="Theme_0lg5h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sdy5x"]
+texture = ExtResource("2_sj0jv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf2ko"]
+texture = ExtResource("2_sj0jv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4i8dq"]
+texture = ExtResource("2_sj0jv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aejrt"]
+texture = ExtResource("3_ot12q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qwt5u"]
+texture = ExtResource("2_sj0jv")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.901961, 0.505882, 1, 0.792157)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v8r43")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -11.0
+offset_right = 84.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_0lg5h")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_pressed_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bieqr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_sdy5x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf2ko")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4i8dq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aejrt")
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_0lg5h")
+theme_override_colors/font_disabled_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_hover_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_pressed_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_focus_color = Color(0.0352941, 0, 0.560784, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bieqr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxTexture_kf2ko")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qwt5u")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aejrt")
+text = "HELP"
