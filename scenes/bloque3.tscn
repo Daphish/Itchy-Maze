@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6hjx5ewqu3wr"]
+
+[ext_resource type="Texture2D" uid="uid://n3o2ydrv2ths" path="res://assets/sprites/plataforma3.png" id="1_2o5mo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6tjm"]
+size = Vector2(172.24, 37.3894)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.267122, -0.0565548)
+scale = Vector2(0.305006, -0.644919)
+shape = SubResource("RectangleShape2D_k6tjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_2o5mo")

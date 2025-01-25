@@ -1,14 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://msmxxho01bio"]
+[gd_scene load_steps=9 format=3 uid="uid://msmxxho01bio"]
 
+[ext_resource type="Texture2D" uid="uid://cxqcn87c74ouj" path="res://assets/sprites/Fondo2.png" id="1_di4cx"]
 [ext_resource type="PackedScene" uid="uid://ccacv4p8xfwte" path="res://scenes/player.tscn" id="1_g36ge"]
-[ext_resource type="Texture2D" uid="uid://cnw2aempct5eu" path="res://assets/sprites/fonde.png" id="2_2xyok"]
+[ext_resource type="PackedScene" uid="uid://c6hjx5ewqu3wr" path="res://scenes/bloque3.tscn" id="3_3o8rf"]
+[ext_resource type="PackedScene" uid="uid://d12aedpcvpbrm" path="res://scenes/bloque_1.tscn" id="4_qgvtc"]
+[ext_resource type="PackedScene" uid="uid://cim5txhqocion" path="res://scenes/bloque_4.tscn" id="5_j6lml"]
+[ext_resource type="PackedScene" uid="uid://dbj0o0af3lv8b" path="res://scenes/pico_a1.tscn" id="6_sgbd7"]
+[ext_resource type="PackedScene" uid="uid://bpqcalmkt3hfd" path="res://scenes/pico_a2.tscn" id="7_42sbl"]
+[ext_resource type="PackedScene" uid="uid://beqv7iud1c1mr" path="res://scenes/pico_a3.tscn" id="8_o8bf0"]
 
 [node name="level1" type="Node2D"]
 
-[node name="Fonde" type="Sprite2D" parent="."]
-position = Vector2(252.5, 127.5)
-scale = Vector2(0.336045, 0.263011)
-texture = ExtResource("2_2xyok")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -94.0
+offset_top = -202.0
+offset_right = 1148.0
+offset_bottom = 419.0
+texture = ExtResource("1_di4cx")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+offset_top = -619.0
+offset_right = 1242.0
+offset_bottom = 2.0
+texture = ExtResource("1_di4cx")
+expand_mode = 1
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+offset_left = 1243.0
+offset_right = 2485.0
+offset_bottom = 621.0
+texture = ExtResource("1_di4cx")
+expand_mode = 1
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2"]
+offset_top = -619.0
+offset_right = 1242.0
+offset_bottom = 2.0
+texture = ExtResource("1_di4cx")
+expand_mode = 1
+flip_h = true
+flip_v = true
 
 [node name="Player" parent="." instance=ExtResource("1_g36ge")]
-position = Vector2(223, 118)
+position = Vector2(179, 114)
+
+[node name="bloque" parent="." instance=ExtResource("3_3o8rf")]
+position = Vector2(171, 144)
+
+[node name="bloque3" parent="." instance=ExtResource("3_3o8rf")]
+position = Vector2(388, 178)
+
+[node name="Bloque1" parent="." instance=ExtResource("4_qgvtc")]
+position = Vector2(249, 156)
+
+[node name="bloque2" parent="." instance=ExtResource("5_j6lml")]
+position = Vector2(-24, -90)
+
+[node name="pico_a1" parent="." instance=ExtResource("6_sgbd7")]
+position = Vector2(-17, 13)
+
+[node name="pico_a5" parent="." instance=ExtResource("6_sgbd7")]
+position = Vector2(229, 46)
+
+[node name="pico_a3" parent="." instance=ExtResource("8_o8bf0")]
+position = Vector2(175, 48)
+
+[node name="pico_a2" parent="." instance=ExtResource("7_42sbl")]
+
+[node name="pico_a4" parent="." instance=ExtResource("7_42sbl")]
+position = Vector2(24, 12)

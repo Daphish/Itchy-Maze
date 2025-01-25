@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpqcalmkt3hfd"]
+
+[ext_resource type="Texture2D" uid="uid://bd7potkcr1omy" path="res://assets/sprites/Pico_A2.png" id="1_r2pmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh4fc"]
+size = Vector2(5.93099, 28.6398)
+
+[node name="pico_a2" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(77.6889, 61.2673)
+rotation = 0.509636
+shape = SubResource("RectangleShape2D_sh4fc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(78.875, 61.125)
+rotation = 0.483456
+scale = Vector2(0.0104911, 0.015125)
+texture = ExtResource("1_r2pmk")
