@@ -1,16 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccacv4p8xfwte"]
+[gd_scene load_steps=16 format=3 uid="uid://ccacv4p8xfwte"]
 
 [ext_resource type="Texture2D" uid="uid://dmr7ragsx6trr" path="res://assets/sprites/B1.png" id="1_efopg"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_t0rxy"]
+[ext_resource type="PackedScene" uid="uid://daar1frjm7b6l" path="res://scenes/gameover.tscn" id="2_xwxpn"]
 [ext_resource type="Texture2D" uid="uid://ceq06n865isnr" path="res://assets/sprites/B2.png" id="3_2eu2c"]
 [ext_resource type="Texture2D" uid="uid://bu7vd06x8i3f8" path="res://assets/sprites/B3.png" id="4_k6m8l"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_yiwwa"]
-radius = 316.228
+[ext_resource type="Texture2D" uid="uid://d3a5u12h587kl" path="res://assets/sprites/B4.png" id="4_qkg77"]
+[ext_resource type="Texture2D" uid="uid://40rer6ehbkgu" path="res://assets/sprites/B5.png" id="5_l8hgl"]
+[ext_resource type="Texture2D" uid="uid://bkkwutqfp18po" path="res://assets/sprites/B6.png" id="6_iurrg"]
+[ext_resource type="Texture2D" uid="uid://bd3ct3b83g5at" path="res://assets/sprites/B7.png" id="7_hjqew"]
+[ext_resource type="Texture2D" uid="uid://c3i1h16jj8gnv" path="res://assets/sprites/B8.png" id="8_yt5j3"]
+[ext_resource type="Texture2D" uid="uid://m2h2upx6ne00" path="res://assets/sprites/B9.png" id="9_ma6lp"]
+[ext_resource type="Texture2D" uid="uid://dcuwqse7v57g1" path="res://assets/sprites/B10.png" id="10_k7ejy"]
+[ext_resource type="Texture2D" uid="uid://c4j1i8q62fkut" path="res://assets/sprites/B11.png" id="11_xwj2t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gd5c"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2eu2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qkg77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l8hgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iurrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hjqew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yt5j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ma6lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k7ejy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xwj2t")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0
@@ -38,30 +71,32 @@ animations = [{
 "texture": ExtResource("1_efopg")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yiwwa"]
+radius = 360.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(50, -25)
 scale = Vector2(0.25, 0.252577)
 script = ExtResource("1_t0rxy")
+game_over_scene = ExtResource("2_xwxpn")
 move_speed = 140.0
 jump_speed = 400.0
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CircleShape2D_yiwwa")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_efopg")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_5gd5c")
-autoplay = "default"
+animation = &"dead"
+frame_progress = 0.285625
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_yiwwa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_horizontal_enabled = true
@@ -71,3 +106,5 @@ drag_top_margin = 0.1
 drag_right_margin = 0.25
 drag_bottom_margin = 0.1
 editor_draw_drag_margin = true
+
+[node name="Timer" type="Timer" parent="."]
