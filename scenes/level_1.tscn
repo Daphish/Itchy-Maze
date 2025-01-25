@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://msmxxho01bio"]
+[gd_scene load_steps=9 format=3 uid="uid://msmxxho01bio"]
 
 [ext_resource type="Texture2D" uid="uid://cxqcn87c74ouj" path="res://assets/sprites/Fondo2.png" id="1_di4cx"]
 [ext_resource type="PackedScene" uid="uid://ccacv4p8xfwte" path="res://scenes/player.tscn" id="1_g36ge"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dbj0o0af3lv8b" path="res://scenes/pico_a1.tscn" id="6_sgbd7"]
 [ext_resource type="PackedScene" uid="uid://bpqcalmkt3hfd" path="res://scenes/pico_a2.tscn" id="7_42sbl"]
 [ext_resource type="PackedScene" uid="uid://beqv7iud1c1mr" path="res://scenes/pico_a3.tscn" id="8_o8bf0"]
-[ext_resource type="PackedScene" uid="uid://dub8572lbr48m" path="res://scenes/enemy.tscn" id="9_naure"]
 
 [node name="level1" type="Node2D"]
 
@@ -76,6 +75,3 @@ position = Vector2(175, 48)
 
 [node name="pico_a4" parent="." instance=ExtResource("7_42sbl")]
 position = Vector2(24, 12)
-
-[node name="enemy" parent="." instance=ExtResource("9_naure")]
-position = Vector2(263, 131)
