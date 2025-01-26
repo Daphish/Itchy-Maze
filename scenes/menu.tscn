@@ -107,3 +107,4 @@ stream = ExtResource("6_n837u")
 autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Help" to="." method="_on_help_pressed"]

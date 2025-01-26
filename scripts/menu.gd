@@ -17,3 +17,7 @@ func _on_button_pressed() -> void:
 	print("Intentando cambiar de escena...")
 	print(get_tree())  # Esto debería mostrar: [SceneTree]
 	_on_start_button_pressed()
+
+
+func _on_help_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/help.tscn")
