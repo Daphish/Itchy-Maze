@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://daar1frjm7b6l"]
+[gd_scene load_steps=10 format=3 uid="uid://daar1frjm7b6l"]
 
 [ext_resource type="Texture2D" uid="uid://m4xy2il7i8xi" path="res://assets/backgrounds/gameover.jpeg" id="1_61ddx"]
 [ext_resource type="Script" path="res://scripts/gameover.gd" id="1_r8umt"]
 [ext_resource type="FontFile" uid="uid://sluwjbr2itt3" path="res://assets/fonts/Cinema Groovy.otf" id="2_7btmh"]
 [ext_resource type="Texture2D" uid="uid://be5trgi23flbt" path="res://assets/backgrounds/hover.png" id="2_ea6l6"]
 [ext_resource type="Texture2D" uid="uid://bbt0y5ad1l7qq" path="res://assets/backgrounds/normal.png" id="3_4hwv3"]
+[ext_resource type="AudioStream" uid="uid://cykg3jjdl3b1o" path="res://assets/music/ItchyMaze_GameOver.wav" id="6_b8lc4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulk8i"]
 texture = ExtResource("2_ea6l6")
@@ -70,5 +71,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ulk8i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_iqihu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xvljg")
 text = "Volver"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b8lc4")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Volver" to="." method="_on_volver_pressed"]

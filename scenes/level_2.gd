@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -10,10 +10,6 @@ func _ready() -> void:
 func _on_audio_finished():
 	audio_player.play()
 
-func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
-
-func _on_button_pressed() -> void:
-	print("Intentando cambiar de escena...")
-	print(get_tree())  # Esto debería mostrar: [SceneTree]
-	_on_start_button_pressed()
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
