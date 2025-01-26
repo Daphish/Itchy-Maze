@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://o2p4nol8rf5r"]
+[gd_scene load_steps=16 format=4 uid="uid://o2p4nol8rf5r"]
 
 [ext_resource type="Texture2D" uid="uid://bixywwx0lrxoi" path="res://assets/sprites/_edited_Four_Seasons_TileSet.png" id="1_ws88k"]
 [ext_resource type="Script" path="res://scenes/level_2.gd" id="1_x8h46"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxqcn87c74ouj" path="res://assets/sprites/Fondo2.png" id="4_pvj8k"]
 [ext_resource type="Texture2D" uid="uid://d3yn00qgbx26a" path="res://assets/sprites/Meta.jpg" id="5_ognu1"]
 [ext_resource type="AudioStream" uid="uid://cxauvvfdx4au2" path="res://assets/music/ItchyMaze_BackMusic.wav" id="7_6ukii"]
+[ext_resource type="Script" path="res://scenes/path_follow_2d.gd" id="8_pbjkt"]
 [ext_resource type="PackedScene" uid="uid://dub8572lbr48m" path="res://scenes/enemy.tscn" id="8_uru5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqw6h"]
@@ -270,6 +271,13 @@ sources/1 = SubResource("TileSetAtlasSource_ltb7m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oc0yf"]
 size = Vector2(97, 127)
 
+[sub_resource type="Curve2D" id="Curve2D_l01iq"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -51, -452, 0, 0, 0, 0, -50, -293, 0, 0, 0, 0, -87, -298, 0, 0, 0, 0, -85, -91, 0, 0, 0, 0, 145, -85, 0, 0, 0, 0, 147, -196, 0, 0, 0, 0, 293, -194, 0, 0, 0, 0, 307, -70, 0, 0, 0, 0, 508, -50, 0, 0, 0, 0, 495, 83, 0, 0, 0, 0, 110, 104, 0, 0, 0, 0, 112, 263, 0, 0, 0, 0, 807, 258, 0, 0, 0, 0, 805, 76, 0, 0, 0, 0, 1039, 84, 0, 0, 0, 0, 1038, 444, 0, 0, 0, 0, 294, 469, 0, 0, 0, 0, 289, 646, 0, 0, 0, 0, 1040, 670, 0, 0, 0, 0, 1045, 1000, 0, 0, 0, 0, 810, 1010, 0, 0, 0, 0, 796, 836, 0, 0, 0, 0, 562, 842, 0, 0, 0, 0, 540, 1019, 0, 0, 0, 0, 298, 1013, 0, 0, 0, 0, 296, 841, 0, 0, 0, 0, 111, 838, 0, 0, 0, 0, 79, 1003, 0, 0, 0, 0, -235, 1002)
+}
+point_count = 29
+
 [node name="level2" type="Node2D"]
 script = ExtResource("1_x8h46")
 
@@ -376,7 +384,17 @@ shape = SubResource("RectangleShape2D_oc0yf")
 stream = ExtResource("7_6ukii")
 volume_db = -10.0
 
-[node name="enemy" parent="." instance=ExtResource("8_uru5k")]
-position = Vector2(-96, -406)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_l01iq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-51, -452)
+rotation = 1.56451
+rotates = false
+script = ExtResource("8_pbjkt")
+
+[node name="enemy" parent="Path2D/PathFollow2D" instance=ExtResource("8_uru5k")]
+position = Vector2(45.7161, 45.2884)
+rotation = -1.56451
 
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]

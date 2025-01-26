@@ -8,14 +8,10 @@ var player: Node2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 func _ready():
-	player = get_parent().get_node("Player")
+	player = get_parent().get_parent().get_parent().get_node("Player")
 
 func _process(delta):
 	if player:
-		var direction = (player.global_position - global_position).normalized()
-		velocity = direction * speed
-		move_and_slide()
-
 		if is_touching_player():
 			player.handle_death()
 
