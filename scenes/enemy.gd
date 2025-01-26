@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 100.0  # Velocidad del enemigo
+@export var speed: float = 70.0  # Velocidad del enemigo
 
 var player: Node2D
 
@@ -17,7 +17,7 @@ func _process(delta):
 		move_and_slide()
 
 		if is_touching_player():
-			player.lose_life()
+			player.handle_death()
 
 func is_touching_player() -> bool:
 	if collision_shape.shape == null:
