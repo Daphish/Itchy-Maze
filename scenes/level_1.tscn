@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://msmxxho01bio"]
+[gd_scene load_steps=10 format=3 uid="uid://msmxxho01bio"]
 
 [ext_resource type="Texture2D" uid="uid://cxqcn87c74ouj" path="res://assets/sprites/Fondo2.png" id="1_di4cx"]
 [ext_resource type="PackedScene" uid="uid://ccacv4p8xfwte" path="res://scenes/player.tscn" id="1_g36ge"]
 [ext_resource type="PackedScene" uid="uid://c6hjx5ewqu3wr" path="res://scenes/bloque3.tscn" id="3_3o8rf"]
+[ext_resource type="PackedScene" uid="uid://cnsjoybx5jmr4" path="res://scenes/win.tscn" id="3_a5u82"]
 [ext_resource type="PackedScene" uid="uid://d12aedpcvpbrm" path="res://scenes/bloque_1.tscn" id="4_qgvtc"]
 [ext_resource type="PackedScene" uid="uid://cim5txhqocion" path="res://scenes/bloque_4.tscn" id="5_j6lml"]
 [ext_resource type="PackedScene" uid="uid://dbj0o0af3lv8b" path="res://scenes/pico_a1.tscn" id="6_sgbd7"]
@@ -49,6 +50,7 @@ flip_v = true
 
 [node name="Player" parent="." instance=ExtResource("1_g36ge")]
 position = Vector2(179, 114)
+win_scene = ExtResource("3_a5u82")
 
 [node name="bloque" parent="." instance=ExtResource("3_3o8rf")]
 position = Vector2(171, 144)

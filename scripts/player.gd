@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var tiempo = $Timer
 
 @export var game_over_scene:PackedScene
+@export var win_scene:PackedScene
 @export var respawn_position:Vector2 = Vector2(100, 100)  # Posición inicial del personaje
 
 @export var move_speed:float 
@@ -73,3 +74,15 @@ func _on_death_timeout():
 		get_tree().change_scene_to_packed(game_over_scene)
 	else:
 		print("No se ha asignado la escena de Game Over")
+	
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	if win_scene:
+		call_deferred("change_to_win_scene")
+	else:
+		print("No se ha asignado la escena de win")
+
+func change_to_win_scene():
+	get_tree().change_scene_to_packed(win_scene)

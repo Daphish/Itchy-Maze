@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccacv4p8xfwte"]
+[gd_scene load_steps=17 format=3 uid="uid://ccacv4p8xfwte"]
 
 [ext_resource type="Texture2D" uid="uid://dmr7ragsx6trr" path="res://assets/sprites/B1.png" id="1_efopg"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_t0rxy"]
 [ext_resource type="PackedScene" uid="uid://daar1frjm7b6l" path="res://scenes/gameover.tscn" id="2_xwxpn"]
 [ext_resource type="Texture2D" uid="uid://ceq06n865isnr" path="res://assets/sprites/B2.png" id="3_2eu2c"]
+[ext_resource type="PackedScene" uid="uid://cnsjoybx5jmr4" path="res://scenes/win.tscn" id="3_a1hx5"]
 [ext_resource type="Texture2D" uid="uid://bu7vd06x8i3f8" path="res://assets/sprites/B3.png" id="4_k6m8l"]
 [ext_resource type="Texture2D" uid="uid://d3a5u12h587kl" path="res://assets/sprites/B4.png" id="4_qkg77"]
 [ext_resource type="Texture2D" uid="uid://40rer6ehbkgu" path="res://assets/sprites/B5.png" id="5_l8hgl"]
@@ -83,6 +84,7 @@ position = Vector2(50, -25)
 scale = Vector2(0.25, 0.252577)
 script = ExtResource("1_t0rxy")
 game_over_scene = ExtResource("2_xwxpn")
+win_scene = ExtResource("3_a1hx5")
 move_speed = 140.0
 jump_speed = 400.0
 metadata/_edit_group_ = true
@@ -99,9 +101,10 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_yiwwa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.6
+drag_left_margin = 0.25
 drag_top_margin = 0.1
 drag_right_margin = 0.25
 drag_bottom_margin = 0.1
